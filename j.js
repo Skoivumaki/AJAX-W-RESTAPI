@@ -64,12 +64,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     jsonData.forEach(function(x){ delete x.clientSystem });
     jsonData.forEach(function(x){ delete x.messageId });
     //jsonData.forEach(function(x){ delete x.routesections });
-    //console.log("testi "+JSON.stringify(jsonData[0].routesections[0]));
+
     // Get the keys (column names) of the first object in the JSON data
     let cols = Object.keys(jsonData[0]);
-    //console.log("Uus "+jsonData);
-    //console.log(cols);
-    //console.log(jsonData[0].version + jsonData[0].messageTime);
     
     // Create the header element
     let thead = document.createElement("thead");
@@ -114,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         let td = document.createElement("td");
         console.log("elem "+elem);
         let compare = JSON.stringify(elem);
-        //console.log("compare "+compare)
         let result = compare.includes("Z");
         if (result === true){
           var newelem;
@@ -122,16 +118,6 @@ document.addEventListener("DOMContentLoaded", () =>{
           newelem = elem.slice(11,16);
           console.log(newelem);
           elem = newelem;
-          
-
-          //console.log("elemlist"+elemlist);
-          //elemlist.forEach((list) => {
-          //	list = list.toString();
-          //	newelem=newelem+" "+list;
-          //});
-          //elem=newelem;
-
-          //console.log(elem);
         }
         td.innerText = elem; // Set the value as the text of the table cell
         tr.appendChild(td); // Append the table cell to the table row

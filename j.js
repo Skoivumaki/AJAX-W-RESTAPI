@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     jsonData.forEach(function(x){ delete x.message });
     jsonData.forEach(function(x){ delete x.clientSystem });
     jsonData.forEach(function(x){ delete x.messageId });
-    //jsonData.forEach(function(x){ delete x.routesections });
+    jsonData.forEach(function(x){ delete x.routesections });
 
     // Get the keys (column names) of the first object in the JSON data
     let cols = Object.keys(jsonData[0]);
